@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <style>
+        body {
+            background-color: #ffe6ea;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d6336c;
+            margin-top: 80px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute;
+        }
+
+        #message {
+            display: none;
+            font-size: 24px;
+            color: #b3003b;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💌 Will You Be My Valentine? 💌</h1>
+
+    <button class="btn" id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
+    <button class="btn" id="noBtn">No 💔</button>
+
+    <div id="message">
+        <p>Yayyy 🥰</p>
+        <p>You just made my Valentine perfect 🌹</p>
+        <p>Can’t wait to make memories with you ❤️</p>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", moveButton);
+        noBtn.addEventListener("touchstart", moveButton);
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function yesClicked() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("yesBtn").style.display = "none";
+            document.getElementById("noBtn").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
